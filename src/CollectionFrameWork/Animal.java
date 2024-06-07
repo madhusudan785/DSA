@@ -1,0 +1,32 @@
+package CollectionFrameWork;
+
+import java.util.Collection;
+
+public class Animal implements Comparable<Animal> {
+    int age;
+    String name;
+    int weight;
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                '}'+"\n";
+    }
+
+    public Animal(int age, String name, int weight) {
+        this.age = age;
+        this.name = name;
+        this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Animal that) {
+        if (this.age== that.age){
+            return this.name.compareTo(that.name);
+        }
+        return this.age- that.age;//same for weight and name
+    }
+}

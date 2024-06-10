@@ -10,9 +10,11 @@ public class RotationOfArray {
         System.arraycopy(nums, 0, temp, 0, k);
         int n=nums.length;
         for (int i = k; i < n ; i++) {
-            nums[i-k]=nums[i];//this is for shifting of remaining element
+            nums[i-k]=nums[i];   //this is for shifting of remaining element
         }
+
         //next thing to is to put the elements that are stored in the temp[]
+
         for (int i = n-k; i <n ; i++) {
             nums[i]=temp[i-(n-k)];
 

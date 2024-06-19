@@ -3,7 +3,7 @@ package ArrayQuestion;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MajorityElement {
+public class MajorityElement {// for n/2 elements
     public static void main(String[] args) {
         int[] nums={7,7,5,7,1,5,7,5,5,7,7,5,5,5,5};
         int element = 0;

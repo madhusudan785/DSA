@@ -39,7 +39,6 @@ class Solution1 {
 
     private static void merge(int[] num, int low, int mid, int high) {
         ArrayList<Integer> temp = new ArrayList<>();
-        int count = 0;
         int left = low;
         int right = mid + 1;
         while (left <= mid && right <= high) {
@@ -48,7 +47,6 @@ class Solution1 {
                 left++;
             } else {
                 temp.add(num[right]);
-                count += (mid - left + 1);
                 right++;
             }
         }

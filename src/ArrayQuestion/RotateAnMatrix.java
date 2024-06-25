@@ -1,8 +1,7 @@
 package ArrayQuestion;
 
 
-import java.util.*;
-class RotateAnArray {
+class RotateAnMatrix {
     static void rotate(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i; j < matrix[0].length; j++) {

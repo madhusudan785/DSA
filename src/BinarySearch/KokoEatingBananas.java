@@ -10,11 +10,11 @@ public class KokoEatingBananas {
 
     public static int findMax(int[] v) {
         int maxi = Integer.MIN_VALUE;
-        ;
+
         int n = v.length;
         //find the maximum:
-        for (int i = 0; i < n; i++) {
-            maxi = Math.max(maxi, v[i]);
+        for (int j : v) {
+            maxi = Math.max(maxi, j);
         }
         return maxi;
     }

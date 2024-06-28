@@ -21,10 +21,9 @@ public class KokoEatingBananas {
 
     public static int calculateTotalHours(int[] v, int hourly) {
         int totalH = 0;
-        int n = v.length;
         //find total hours:
-        for (int i = 0; i < n; i++) {
-            totalH += Math.ceil((double) (v[i]) / (double) (hourly));
+        for (int j : v) {
+            totalH += Math.ceil((double) j / (double) (hourly));
         }
         return totalH;
     }

@@ -15,7 +15,6 @@ public class LeastDivisor {
         for(int i:nums){
             high=Math.max(high,i);
         }
-
         while(low <= high){
             int mid=low+(high-low)/2;
             if(subDiv(nums,mid) <= threshold){

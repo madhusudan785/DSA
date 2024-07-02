@@ -1,9 +1,5 @@
 package BinarySearch;
 
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
-
 public class MedianTwoSortedArray {
     public static void main(String[] args) {
         int[] arr1 = {},arr2={1};

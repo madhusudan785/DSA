@@ -16,7 +16,7 @@ public class MinimizeMaxDistanceToGasStation {
 
         //Find the maximum distance:
         for (int i = 0; i < n - 1; i++) {
-            high = Math.max(high, arr[i + 1] - arr[i]);
+            high = Math.max(high, (double)(arr[i + 1] - arr[i]));
         }
 
         //Apply Binary search:

@@ -10,7 +10,6 @@ public class MedianTwoSortedArray {
         int n1 = nums1.length, n2 = nums2.length;
         //if n1 is bigger swap the arrays:
         if (n1 > n2) return findMedianSortedArrays(nums2, nums1);
-
         int n = n1 + n2; //total length
         int left = (n1 + n2 + 1) / 2; //length of left half
         //apply binary search:

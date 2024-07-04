@@ -1,29 +1,32 @@
 package BinarySearch;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class SearchInTwoDArray {
     public static void main(String[] args) {
-        ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
-        matrix.add(new ArrayList<>(Arrays.asList(9, 10, 11, 12)));
-        boolean result = searchMatrix(matrix, 9);
-        System.out.println(result ? "true" : "false");
-
+        int[][] arr={{1,4},{2,5}};
+        int target=2;
+        boolean result=search(arr,target);
+        System.out.println(result);
     }
-    public static boolean searchMatrix(ArrayList<ArrayList<Integer>> matrix, int target) {
-        int m = matrix.size();
-        if (m == 0) return false;
-        int n = matrix.get(0).size();
 
-        //apply binary search:
-        int low = 0, high = n * m - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            int row = mid / m, col = mid % m;
-            if (matrix.get(row).get(col) == target) return true;
-            else if (matrix.get(row).get(col) < target) low = mid + 1;
-            else high = mid - 1;
+    private static boolean search(int[][] matrix, int target) {
+        int n=matrix.length;
+        if(n==0) return false;//if the first array length is zero then thee 17line will become zero
+        int m=matrix[0].length;
+
+        int low=0,high=n*m-1;//this is for imaginary flattening the 2D to 1D array
+
+        while (low<=high){
+            int mid=(low+high)/2;
+
+            int row=mid/m,col=mid%m;//this is for the index value that are required in the next step compare with target
+
+            if(matrix[row][col]==target) return true;
+            else if(matrix[row][col]<target){
+                low=mid+1;
+            }
+            else {
+                high=mid-1;
+            }
         }
         return false;
     }

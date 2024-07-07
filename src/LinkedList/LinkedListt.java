@@ -4,7 +4,7 @@ public class LinkedListt {
     public static void main(String[] args) {
         int[] arr={1,22,34,5,6,7};
         Node head=convertArrToLL(arr);
-
+        head=insertElementAtValueK(head,13,7);
         print(head);
 
 
@@ -42,7 +42,7 @@ public class LinkedListt {
     private static void print(Node head){
         Node temp=head;
         while (temp !=null){
-            System.out.println(temp.data);
+            System.out.print(temp.data+"->");
             temp=temp.next;
         }
     }
@@ -108,6 +108,7 @@ public class LinkedListt {
 
         return new Node(value,head);
     }
+
     private static Node insertValueAtLast(Node head,int value){
         if(head==null){
             return new Node(value);
@@ -121,6 +122,46 @@ public class LinkedListt {
 
     return head;
     }
+    private static Node insertValueAtk(Node head,int value,int k){
+        if (head ==null) return new Node(value);
+        if (k==1){
+            return new Node(value,head);
+        }
+        int count=0;
+        Node temp=head;
+        while (temp != null){
+            count++;
+            if (count == k-1){
+                Node newNode=new Node(value);
+                newNode.next=temp.next;//first connect the new node to next node then connect the old one to the new node
+                temp.next=newNode;
+                break;
+            }
+            temp=temp.next;
+        }
+        return head;
+    }
+    private static Node insertElementAtValueK(Node head,int value,int k){
+        if (head ==null) return null;
+        Node temp=head;
+
+        if (temp.data==k){
+            return new Node(value,head);
+        }
+
+        while (temp.next != null){
+
+            if (temp.next.data == k){
+                Node newNode=new Node(value);
+                newNode.next=temp.next;//first connect the new node to next node then connect the old one to the new node
+                temp.next=newNode;
+                break;
+            }
+            temp=temp.next;
+        }
+        return head;
+    }
+
 
 
 

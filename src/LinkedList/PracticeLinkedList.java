@@ -41,6 +41,10 @@ public class PracticeLinkedList {
         } 
         temp.next=newNode;
     }
+    public static void deleteNode(Node head){
+
+    }
+
     public void print(Node head){
         Node temp=head;
         while (temp != null) {

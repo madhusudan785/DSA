@@ -4,12 +4,12 @@ public class LinkedListt {
     public static void main(String[] args) {
         int[] arr={1,22,34,5,6,7};
         Node head=convertArrToLL(arr);
-        head=insertElementAtValueK(head,13,7);
+        deleteMiddle(head);
         print(head);
 
 
     }
-    private static Node convertArrToLL(int[] arr){
+    static Node convertArrToLL(int[] arr){
         Node head=new Node(arr[0]);
         Node mover=head;
         for (int i = 1; i < arr.length; i++) {
@@ -54,12 +54,12 @@ public class LinkedListt {
         return head;
 
     }
-    private static Node deleteKthPosition(Node head,int k){
-        if(head == null ) return null;
+    private static void deleteKthPosition(Node head, int k){
+        if(head == null ) return;
         Node temp =head;
         if (k==1){
             head=head.next;
-            return head;
+            return;
         }
         int count=0;
         Node previous= null;
@@ -73,7 +73,6 @@ public class LinkedListt {
             temp=temp.next;
 
         }
-        return head;
     }
     private static Node deleteTail(Node head){
         if (head == null||head.next==null) return head;
@@ -84,7 +83,17 @@ public class LinkedListt {
         temp.next=null;
         return head;
     }
-    private static Node deleteElement(Node head,int value){
+    private static void deleteMiddle(Node head) {
+        Node temp = head;
+        int length = 0;
+        while (temp != null) {
+            length++;
+            temp = temp.next;
+        }
+        int n=(length/2)+1;
+        deleteKthPosition(head,n);
+    }
+    private static Node deleteElement(Node head,int value){//this is only for unique values in LL for duplicates code in comment
         if (head==null) return null;
 
         if (head.data==value){
@@ -181,6 +190,21 @@ class Node{
     }
 }
 /*
+ private static Node deleteElement(Node head,int value){
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node current=dummy;
+        while (current != null) {
+            if (current.next != null && current.next.val == val) {
+                current.next = current.next.next; // Remove the node by skipping it
+            } else {
+                current = current.next; // Move to the next node
+            }
+        }
+
+        return dummy.next;
+    }
+
         System.out.println("head of LL->"+head.data);
         Node temp=head;
         while (temp != null){

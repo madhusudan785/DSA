@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SortingNoOfElement {
     public static void main(String[] args) {
-        int[] nums={0, 0, 0, 0, 0, 0};
+        int[] nums={0, 0, 1, 2, 1, 0};
         int n= nums.length;
         int low=0;
         int high=n-1;

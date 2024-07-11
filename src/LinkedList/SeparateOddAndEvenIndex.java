@@ -6,7 +6,7 @@ import java.util.List;
 public class SeparateOddAndEvenIndex {
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5};
-        Node head=convertArrayToDll(arr);
+        Node head=convertArrayToll(arr);
         head=oddEvenList(head);
 
         print(head);
@@ -33,7 +33,7 @@ public class SeparateOddAndEvenIndex {
        return head;
     }
 
-    private static Node convertArrayToDll(int[] arr){
+    private static Node convertArrayToll(int[] arr){
         return LinkedListt.convertArrToLL(arr);
     }
     private static void print(Node head){

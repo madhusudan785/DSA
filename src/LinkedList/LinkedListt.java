@@ -2,10 +2,11 @@ package LinkedList;
 
 public class LinkedListt {
     public static void main(String[] args) {
-        int[] arr={1,22,34,5,6,7};
+        int[] arr={1,2,3,4,5};
         Node head=convertArrToLL(arr);
-        deleteMiddle(head);
-        print(head);
+
+        int count=sizeOfLL(head);
+        System.out.println(count);
 
 
     }

@@ -3,10 +3,13 @@ package LinkedList;
 import java.util.ArrayList;
 import java.util.List;
 
+import static LinkedList.LinkedListt.convertArrToLL;
+import static LinkedList.LinkedListt.print;
+
 public class SeparateOddAndEvenIndex {
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5};
-        Node head=convertArrayToll(arr);
+        Node head=convertArrToLL(arr);
         head=oddEvenList(head);
 
         print(head);
@@ -33,25 +36,8 @@ public class SeparateOddAndEvenIndex {
        return head;
     }
 
-    private static Node convertArrayToll(int[] arr){
-        return LinkedListt.convertArrToLL(arr);
-    }
-    private static void print(Node head){
-        Node temp=head;
-        while (temp != null){
-            System.out.print(temp.data+"->");
-            temp=temp.next;
-        }
-    }
-    private static int sizeOfLL(Node head){
-        int count=0;
-        Node temp=head;
-        while (temp != null){
-            temp=temp.next;
-            count++;
-        }
-        return count;
-    }
+
+
 }
 /*
 brute force

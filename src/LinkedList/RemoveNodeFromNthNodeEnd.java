@@ -4,9 +4,9 @@ public class RemoveNodeFromNthNodeEnd {
     public static void main(String[] args) {
         int[] arr={1,2,4,5,6,7};
         int n=6;
-        Node head=convertArrayToll(arr);
+        Node head=LinkedListt.convertArrToLL(arr);
         head=removeNode(head,n);
-        print(head);
+        LinkedListt.print(head);
 
     }
     private static Node removeNode(Node head,int n){
@@ -27,14 +27,6 @@ public class RemoveNodeFromNthNodeEnd {
         return head;
     }
 
-    private static Node convertArrayToll(int[] arr){
-        return LinkedListt.convertArrToLL(arr);
-    }
-    private static void print(Node head){
-        Node temp=head;
-        while (temp !=null){
-            System.out.print(temp.data+"->");
-            temp=temp.next;
-        }
-    }
+
+
 }

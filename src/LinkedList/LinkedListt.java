@@ -10,7 +10,7 @@ public class LinkedListt {
 
 
     }
-    static Node convertArrToLL(int[] arr){
+    public static Node convertArrToLL(int[] arr){
         Node head=new Node(arr[0]);
         Node mover=head;
         for (int i = 1; i < arr.length; i++) {
@@ -21,7 +21,7 @@ public class LinkedListt {
         }
         return head;
     }
-    private static int sizeOfLL(Node head){
+    public static int sizeOfLL(Node head){
         int count=0;
         Node temp=head;
         while (temp != null){
@@ -30,7 +30,7 @@ public class LinkedListt {
         }
         return count;
     }
-    private static boolean isPresent(Node head,int value){
+    public static boolean isPresent(Node head,int value){
         Node temp=head;
         while (temp != null) {
             if (temp.data == value) {
@@ -40,14 +40,14 @@ public class LinkedListt {
         }
         return false;
     }
-    private static void print(Node head){
+    public static void print(Node head){
         Node temp=head;
         while (temp !=null){
             System.out.print(temp.data+"->");
             temp=temp.next;
         }
     }
-    private static Node deleteHead(Node head){
+    public static Node deleteHead(Node head){
 
         if (head==null) return head;
 
@@ -55,7 +55,7 @@ public class LinkedListt {
         return head;
 
     }
-    private static void deleteKthPosition(Node head, int k){
+    public static void deleteKthPosition(Node head, int k){
         if(head == null ) return;
         Node temp =head;
         if (k==1){
@@ -75,7 +75,7 @@ public class LinkedListt {
 
         }
     }
-    private static Node deleteTail(Node head){
+    public static Node deleteTail(Node head){
         if (head == null||head.next==null) return head;
         Node temp=head;
         while (temp.next.next != null){
@@ -84,7 +84,7 @@ public class LinkedListt {
         temp.next=null;
         return head;
     }
-    private static void deleteMiddle(Node head) {
+    public static void deleteMiddle(Node head) {
         Node temp = head;
         int length = 0;
         while (temp != null) {
@@ -94,7 +94,7 @@ public class LinkedListt {
         int n=(length/2)+1;
         deleteKthPosition(head,n);
     }
-    private static Node deleteElement(Node head,int value){//this is only for unique values in LL for duplicates code in comment
+    public static Node deleteElement(Node head,int value){//this is only for unique values in LL for duplicates code in comment
         if (head==null) return null;
 
         if (head.data==value){
@@ -114,12 +114,12 @@ public class LinkedListt {
         }
         return head;
     }
-    private static Node insertValueAtFirst(Node head,int value){
+    public static Node insertValueAtFirst(Node head,int value){
 
         return new Node(value,head);
     }
 
-    private static Node insertValueAtLast(Node head,int value){
+    public static Node insertValueAtLast(Node head,int value){
         if(head==null){
             return new Node(value);
         }
@@ -132,7 +132,7 @@ public class LinkedListt {
 
     return head;
     }
-    private static Node insertValueAtk(Node head,int value,int k){
+    public static Node insertValueAtk(Node head,int value,int k){
         if (head ==null) return new Node(value);
         if (k==1){
             return new Node(value,head);

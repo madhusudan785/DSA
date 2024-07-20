@@ -2,16 +2,13 @@ package LinkedList;
 
 public class AddTwoLL {
     public static void main(String[] args) {
-        int[] arr1={2,4,9};
-        int[] arr2={5,6,4,9};
-        Node head1=convertArrayToDll(arr1);
-        Node head2=convertArrayToDll(arr2);
-        print(addTwoLL(head1,head2));
+        int[] arr1 = {2, 4, 9};
+        int[] arr2 = {5, 6, 4, 9};
+        Node head1 = LinkedListt.convertArrToLL(arr1);
+        Node head2 = LinkedListt.convertArrToLL(arr2);
+        LinkedListt.print(addTwoLL(head1, head2));
 
 
-    }
-    private static Node convertArrayToDll(int[] arr){
-        return LinkedListt.convertArrToLL(arr);
     }
     private static Node addTwoLL(Node head1,Node head2)
     {
@@ -43,12 +40,6 @@ public class AddTwoLL {
 
         return dummyNode.next;
     }
-    private static void print(Node head){
-        Node temp=head;
-        while (temp != null){
-            System.out.print(temp.data+"->");
-            temp=temp.next;
-        }
-    }
+
 
 }

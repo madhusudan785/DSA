@@ -189,6 +189,11 @@ class Node{
         this.data = data;
         this.next = next;
     }
+    Node head;
+
+    public Node() {
+
+    }
 }
 /*
  private static Node deleteElement(Node head,int value){

@@ -3,35 +3,35 @@ package LinkedList;
 public class LinkedListt {
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5};
-        Node head=convertArrToLL(arr);
+        ListNode head=convertArrToLL(arr);
 
         int count=sizeOfLL(head);
         System.out.println(count);
 
 
     }
-    public static Node convertArrToLL(int[] arr){
-        Node head=new Node(arr[0]);
-        Node mover=head;
+    public static ListNode convertArrToLL(int[] arr){
+        ListNode head=new ListNode(arr[0]);
+        ListNode mover=head;
         for (int i = 1; i < arr.length; i++) {
-            Node temp=new Node(arr[i]);
+            ListNode temp=new ListNode(arr[i]);
             mover.next=temp;
             mover=temp;
 
         }
         return head;
     }
-    public static int sizeOfLL(Node head){
+    public static int sizeOfLL(ListNode head){
         int count=0;
-        Node temp=head;
+        ListNode temp=head;
         while (temp != null){
             temp=temp.next;
             count++;
         }
         return count;
     }
-    public static boolean isPresent(Node head,int value){
-        Node temp=head;
+    public static boolean isPresent(ListNode head, int value){
+        ListNode temp=head;
         while (temp != null) {
             if (temp.data == value) {
                 return true;
@@ -40,14 +40,14 @@ public class LinkedListt {
         }
         return false;
     }
-    public static void print(Node head){
-        Node temp=head;
+    public static void print(ListNode head){
+        ListNode temp=head;
         while (temp !=null){
             System.out.print(temp.data+"->");
             temp=temp.next;
         }
     }
-    public static Node deleteHead(Node head){
+    public static ListNode deleteHead(ListNode head){
 
         if (head==null) return head;
 
@@ -55,15 +55,15 @@ public class LinkedListt {
         return head;
 
     }
-    public static void deleteKthPosition(Node head, int k){
+    public static void deleteKthPosition(ListNode head, int k){
         if(head == null ) return;
-        Node temp =head;
+        ListNode temp =head;
         if (k==1){
             head=head.next;
             return;
         }
         int count=0;
-        Node previous= null;
+        ListNode previous= null;
         while (temp != null){
             count++;
             if (count==k){
@@ -75,17 +75,17 @@ public class LinkedListt {
 
         }
     }
-    public static Node deleteTail(Node head){
+    public static ListNode deleteTail(ListNode head){
         if (head == null||head.next==null) return head;
-        Node temp=head;
+        ListNode temp=head;
         while (temp.next.next != null){
              temp=temp.next;
         }
         temp.next=null;
         return head;
     }
-    public static void deleteMiddle(Node head) {
-        Node temp = head;
+    public static void deleteMiddle(ListNode head) {
+        ListNode temp = head;
         int length = 0;
         while (temp != null) {
             length++;
@@ -94,15 +94,15 @@ public class LinkedListt {
         int n=(length/2)+1;
         deleteKthPosition(head,n);
     }
-    public static Node deleteElement(Node head,int value){//this is only for unique values in LL for duplicates code in comment
+    public static ListNode deleteElement(ListNode head, int value){//this is only for unique values in LL for duplicates code in comment
         if (head==null) return null;
 
         if (head.data==value){
             head=head.next;
             return head;
         }
-        Node previous=null;
-        Node temp=head;
+        ListNode previous=null;
+        ListNode temp=head;
         while (temp != null){
             if (temp.data==value){
                 previous.next=previous.next.next;
@@ -114,35 +114,35 @@ public class LinkedListt {
         }
         return head;
     }
-    public static Node insertValueAtFirst(Node head,int value){
+    public static ListNode insertValueAtFirst(ListNode head, int value){
 
-        return new Node(value,head);
+        return new ListNode(value,head);
     }
 
-    public static Node insertValueAtLast(Node head,int value){
+    public static ListNode insertValueAtLast(ListNode head, int value){
         if(head==null){
-            return new Node(value);
+            return new ListNode(value);
         }
-        Node temp=head;
+        ListNode temp=head;
         while (temp.next !=null){
             temp=temp.next;
             }
-            temp.next=new Node(value);
+            temp.next=new ListNode(value);
 
 
     return head;
     }
-    public static Node insertValueAtk(Node head,int value,int k){
-        if (head ==null) return new Node(value);
+    public static ListNode insertValueAtk(ListNode head, int value, int k){
+        if (head ==null) return new ListNode(value);
         if (k==1){
-            return new Node(value,head);
+            return new ListNode(value,head);
         }
         int count=0;
-        Node temp=head;
+        ListNode temp=head;
         while (temp != null){
             count++;
             if (count == k-1){
-                Node newNode=new Node(value);
+                ListNode newNode=new ListNode(value);
                 newNode.next=temp.next;//first connect the new node to next node then connect the old one to the new node
                 temp.next=newNode;
                 break;
@@ -151,18 +151,18 @@ public class LinkedListt {
         }
         return head;
     }
-    private static Node insertElementAtValueK(Node head,int value,int k){
+    private static ListNode insertElementAtValueK(ListNode head, int value, int k){
         if (head ==null) return null;
-        Node temp=head;
+        ListNode temp=head;
 
         if (temp.data==k){
-            return new Node(value,head);
+            return new ListNode(value,head);
         }
 
         while (temp.next != null){
 
             if (temp.next.data == k){
-                Node newNode=new Node(value);
+                ListNode newNode=new ListNode(value);
                 newNode.next=temp.next;//first connect the new node to next node then connect the old one to the new node
                 temp.next=newNode;
                 break;
@@ -176,22 +176,22 @@ public class LinkedListt {
 
 
 }
-class Node{
+class ListNode {
     int data;
-    Node next;
+    ListNode next;
 
-    public Node(int data) {
+    public ListNode(int data) {
         this.data = data;
         this.next=null;
     }
 
-    public Node(int data, Node next) {
+    public ListNode(int data, ListNode next) {
         this.data = data;
         this.next = next;
     }
-    Node head;
+    ListNode head;
 
-    public Node() {
+    public ListNode() {
 
     }
 }

@@ -3,21 +3,21 @@ package LinkedList;
 public class SortLLByZerosOnesAndTwos {
     public static void main(String[] args) {
         int[] arr={0,0};
-        Node head=convertArrayToll(arr);
+        ListNode head=convertArrayToll(arr);
         head=sortLL(head);
         print(head);
     }
-    private static Node sortLL(Node head){
+    private static ListNode sortLL(ListNode head){
         if(head==null || head.next==null){
             return head;
         }
-        Node temp=head;
-        Node zero = new Node(0);
-        Node zeroHead = zero;
-        Node one = new Node(1);
-        Node oneHead = one;
-        Node two = new Node(2);
-        Node twoHead = two;
+        ListNode temp=head;
+        ListNode zero = new ListNode(0);
+        ListNode zeroHead = zero;
+        ListNode one = new ListNode(1);
+        ListNode oneHead = one;
+        ListNode two = new ListNode(2);
+        ListNode twoHead = two;
 
 
         while(temp!=null){
@@ -44,7 +44,7 @@ public class SortLLByZerosOnesAndTwos {
         zero.next= (oneHead.next!=null) ? (oneHead.next) : (twoHead.next);
         one.next=twoHead.next;
         two.next=null;
-        Node newhead= zeroHead.next;
+        ListNode newhead= zeroHead.next;
 
         zeroHead.next=null;
         oneHead.next=null;
@@ -52,11 +52,11 @@ public class SortLLByZerosOnesAndTwos {
 
         return newhead;
     }
-    private static Node convertArrayToll(int[] arr){
+    private static ListNode convertArrayToll(int[] arr){
         return LinkedListt.convertArrToLL(arr);
     }
-    private static void print(Node head){
-        Node temp=head;
+    private static void print(ListNode head){
+        ListNode temp=head;
         while (temp !=null){
             System.out.print(temp.data+"->");
             temp=temp.next;

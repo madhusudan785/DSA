@@ -1,22 +1,19 @@
 package LinkedList;
 
-import java.util.HashMap;
-import java.util.HashSet;
-
 
 public class IntersectionOfLL {
     public static void main(String[] args) {
         int[] arr1 = {4,1,8,4,5};
         int[] arr2 = {5,6,1,8,4,5};
-        Node head1 = LinkedListt.convertArrToLL(arr1);
-        Node head2 = LinkedListt.convertArrToLL(arr2);
+        ListNode head1 = LinkedListt.convertArrToLL(arr1);
+        ListNode head2 = LinkedListt.convertArrToLL(arr2);
 
         head2.next.next = head1.next.next;
 
         printLinkedList(head1);
         printLinkedList(head2);
 
-        Node answerNode = getIntersectionNode(head1, head2);
+        ListNode answerNode = getIntersectionNode(head1, head2);
         if (answerNode == null) {
             System.out.println("No intersection");
         } else {
@@ -24,9 +21,9 @@ public class IntersectionOfLL {
         }
     }
 
-    public static Node getIntersectionNode(Node head1, Node head2) {
-        Node t1=head1;
-        Node t2=head2;
+    public static ListNode getIntersectionNode(ListNode head1, ListNode head2) {
+        ListNode t1=head1;
+        ListNode t2=head2;
         if (t1 == null || t2 == null) return null;
         while (t1 != t2){
             t1=t1.next;
@@ -40,8 +37,8 @@ public class IntersectionOfLL {
         return t1;
     }
 
-    public static void printLinkedList(Node head) {
-        Node current = head;
+    public static void printLinkedList(ListNode head) {
+        ListNode current = head;
         while (current != null) {
             System.out.print(current.data);
             if (current.next != null) {

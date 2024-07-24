@@ -3,16 +3,16 @@ package LinkedList;
 public class RotateALL {
     public static void main(String[] args) {
         int[] arr={1,3,4,5,6};
-        Node head=LinkedListt.convertArrToLL(arr);
+        ListNode head=LinkedListt.convertArrToLL(arr);
         head=reverseLL(head);
         LinkedListt.print(head);
 
     }
-    public static Node reverseLL(Node head){
+    public static ListNode reverseLL(ListNode head){
         if (head==null || head.next ==null) return head;
 
-        Node newHead=reverseLL(head.next);
-           Node front= head.next;
+        ListNode newHead=reverseLL(head.next);
+           ListNode front= head.next;
            front.next=head;
            head.next=null;
            return newHead;

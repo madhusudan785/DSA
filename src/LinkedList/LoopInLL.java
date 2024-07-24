@@ -1,14 +1,13 @@
 package LinkedList;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class LoopInLL {
     public static void main(String[] args) {
-        Node head = new Node(1);
-        Node second = new Node(2);
-        Node third = new Node(3);
-        Node fourth = new Node(4);
-        Node fifth = new Node(5);
+        ListNode head = new ListNode(1);
+        ListNode second = new ListNode(2);
+        ListNode third = new ListNode(3);
+        ListNode fourth = new ListNode(4);
+        ListNode fifth = new ListNode(5);
 
         head.next = second;
         second.next = third;
@@ -27,10 +26,10 @@ public class LoopInLL {
 
     }
 
-    private static boolean detectLoop(Node head) {
+    private static boolean detectLoop(ListNode head) {
         if (head==null||head.next==null) return false;
-       Node slow=head;
-       Node fast=head;
+       ListNode slow=head;
+       ListNode fast=head;
        while (fast != null&&fast.next !=null){
            slow=slow.next;
            fast=fast.next.next;

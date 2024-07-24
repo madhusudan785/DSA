@@ -4,18 +4,18 @@ public class AddTwoLL {
     public static void main(String[] args) {
         int[] arr1 = {2, 4, 9};
         int[] arr2 = {5, 6, 4, 9};
-        Node head1 = LinkedListt.convertArrToLL(arr1);
-        Node head2 = LinkedListt.convertArrToLL(arr2);
+        ListNode head1 = LinkedListt.convertArrToLL(arr1);
+        ListNode head2 = LinkedListt.convertArrToLL(arr2);
         LinkedListt.print(addTwoLL(head1, head2));
 
 
     }
-    private static Node addTwoLL(Node head1,Node head2)
+    private static ListNode addTwoLL(ListNode head1, ListNode head2)
     {
-        Node dummyNode=new Node(0);
-        Node current=dummyNode;
-        Node t1=head1;
-        Node t2=head2;
+        ListNode dummyNode=new ListNode(0);
+        ListNode current=dummyNode;
+        ListNode t1=head1;
+        ListNode t2=head2;
         int carry=0;
         while (t1 != null || t2 != null){
             int sum=carry;
@@ -26,7 +26,7 @@ public class AddTwoLL {
             if (t2 != null){
                 sum=sum+ t2.data;
             }
-            Node newNode=new Node(sum%10);
+            ListNode newNode=new ListNode(sum%10);
              carry=sum/10;
              current.next=newNode;
              current=current.next;
@@ -35,7 +35,7 @@ public class AddTwoLL {
 
         }
         if (carry != 0){
-            current.next= new Node(carry);
+            current.next= new ListNode(carry);
         }
 
         return dummyNode.next;

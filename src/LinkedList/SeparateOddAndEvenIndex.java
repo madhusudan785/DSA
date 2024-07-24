@@ -1,27 +1,24 @@
 package LinkedList;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static LinkedList.LinkedListt.convertArrToLL;
 import static LinkedList.LinkedListt.print;
 
 public class SeparateOddAndEvenIndex {
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5};
-        Node head=convertArrToLL(arr);
+        ListNode head=convertArrToLL(arr);
         head=oddEvenList(head);
 
         print(head);
 
     }
-    private static Node oddEvenList(Node head){
+    private static ListNode oddEvenList(ListNode head){
         //edge case always first
         if (head ==null || head.next==null) return head;
         //minimizing the space complexity
-        Node odd=head;
-        Node even=head.next;
-        Node evenHead=even;
+        ListNode odd=head;
+        ListNode even=head.next;
+        ListNode evenHead=even;
         while (even !=null && even.next != null){
             odd.next = odd.next.next; // move odd pointer
             odd = odd.next;

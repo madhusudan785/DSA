@@ -3,7 +3,7 @@ package LinkedList;
 public class MiddleOfLL {
     public static void main(String[] args) {
 
-        int[] arr={1,3,2,2,3,2};
+        int[] arr={1,3,4,2,3,2};
         ListNode head=LinkedListt.convertArrToLL(arr);
         head=findMiddle(head);
         System.out.println(head.data);

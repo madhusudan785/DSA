@@ -7,14 +7,11 @@ public class QuickSort {
         int[] arr={4,6,2,5,7,9,1,3};
         System.out.println(Arrays.toString(arr));
         int n= arr.length;
-        Solution1.quickSort(arr,0,n-1);
+        quickSort(arr,0,n-1);
         System.out.println(Arrays.toString(arr));
 
     }
-}
-class Solution1{
-
-    public static void quickSort(int[] arr, int low, int high) {
+    private static void quickSort(int[] arr, int low, int high) {
         if (low<high){
             int partitionIndex=partition(arr, low, high);
             quickSort(arr,low,partitionIndex-1);
@@ -46,3 +43,4 @@ class Solution1{
 
     }
 }
+

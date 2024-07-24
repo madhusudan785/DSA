@@ -7,8 +7,9 @@ public class DoublyLinkedList {
         int[] arr={1,3,4,2,6};
         NodeForDLL head=convertArrayToDll(arr);
 //        deleteNode(head.next.next);
-        insertValBeforeNode(head.next.next,23);
-        print(head);
+//        insertValBeforeNode(head.next.next,23);
+        NodeForDLL tail = findTail(head);
+
     }
 
     private static void insertValBeforeNode(NodeForDLL node,int val){
@@ -17,7 +18,15 @@ public class DoublyLinkedList {
         prev.next=newNode;
         node.back=newNode;
     }
+    public static NodeForDLL findTail(NodeForDLL head){
+        if (head==null || head.next==null) return null;
+        NodeForDLL tail=head;
 
+        while (tail.next != null){
+            tail=tail.next;
+        }
+        return tail;
+    }
     private static NodeForDLL insertValBeforeK(NodeForDLL head,int k,int val){
         if (k==1) return insertBeforeHead(head,val);
 
@@ -137,7 +146,7 @@ public class DoublyLinkedList {
         }
         return head;
     }
-    private static void print(NodeForDLL head){
+    public static void print(NodeForDLL head){
         while (head != null){
             System.out.print(head.data+"->");
             head=head.next;

@@ -118,7 +118,6 @@ public class LinkedListt {
 
         return new ListNode(value,head);
     }
-
     public static ListNode insertValueAtLast(ListNode head, int value){
         if(head==null){
             return new ListNode(value);
@@ -171,9 +170,6 @@ public class LinkedListt {
         }
         return head;
     }
-
-
-
 
 }
 class ListNode {

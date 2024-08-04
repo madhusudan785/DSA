@@ -9,7 +9,7 @@ public class SortALL {
         LinkedListt.print(sortOfLL(head));
 
     }
-    private static ListNode sortOfLL(ListNode head){
+    public static ListNode sortOfLL(ListNode head){
         if (head==null || head.next==null) return head;
 
         ListNode middle= findMiddle(head);

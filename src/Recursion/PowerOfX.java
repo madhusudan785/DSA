@@ -15,7 +15,7 @@ public class PowerOfX {
             if (nn % 2 == 1) {
                 ans = ans * x;
                 nn = nn - 1;
-            } else {
+            } else { // T.C-> O(log n)
                 x = x * x;
                 nn = nn / 2;
             }

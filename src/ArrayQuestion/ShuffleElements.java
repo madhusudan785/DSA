@@ -2,7 +2,7 @@ package ArrayQuestion;
 
 import java.util.Arrays;
 
-public class Leetcode1470 {
+public class ShuffleElements {
     public static void main(String[] args) {
         int[] nums = {2,5,1,3,4,7};
         int n=3;
